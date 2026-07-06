@@ -1047,7 +1047,7 @@ export default function QuranTranslationLandingPage() {
                   />
                 </div>
                 <div className="truncate text-sm font-bold tracking-wide sm:text-xl">
-                  Sana 古兰经频道
+                  萨纳古兰经频道
                 </div>
               </div>
 
@@ -1112,7 +1112,7 @@ export default function QuranTranslationLandingPage() {
                 className="text-3xl font-black leading-[1.25] sm:text-5xl lg:text-7xl"
               >
                 <span className="block bg-gradient-to-r from-[#F2E6C4] via-[#D8B36A] to-[#DCE4DD] bg-clip-text text-transparent">
-                  Sana 古兰经频道
+                  萨纳古兰经频道
                 </span>
               </motion.h1>
 
@@ -1205,7 +1205,7 @@ export default function QuranTranslationLandingPage() {
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <p className="text-xs text-white/60 sm:text-sm">当前语言</p>
-                        <h3 className="mt-1 text-xl font-bold sm:text-2xl">阿拉伯语古兰经</h3>
+                        <h3 className="mt-1 text-xl font-bold sm:text-2xl">《古兰经》中文版</h3>
                       </div>
                       <div className="w-fit rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-2 text-xs text-[#E3E7E3] sm:text-sm">
                         实时播出
@@ -1337,7 +1337,7 @@ export default function QuranTranslationLandingPage() {
                           值得信赖的执行合作
                         </h2>
                         <p className="mt-5 text-base leading-8 text-white/78 sm:text-lg">
-                          <span className="font-bold text-white">Sana 古兰经频道</span>
+                          <span className="font-bold text-white">萨纳古兰经频道</span>
                           项目由
                           <span className="font-bold" style={{ color: ACCENT }}>
                             沙特-约旦卫星广播公司（Jasco）
@@ -1590,7 +1590,7 @@ export default function QuranTranslationLandingPage() {
 
                     <div className="mt-4">
                       <span className="inline-flex rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-xs text-white/90 sm:px-5 sm:text-sm">
-                        Sana 古兰经频道
+                        萨纳古兰经频道
                       </span>
                     </div>
 
@@ -1716,7 +1716,7 @@ export default function QuranTranslationLandingPage() {
               </div>
 
               <div className="mt-8 border-t border-white/10 pt-5 text-center text-xs text-white/55 sm:text-sm">
-                版权所有 © Sana 古兰经频道
+                版权所有 © 萨纳古兰经频道
               </div>
             </div>
           </footer>
