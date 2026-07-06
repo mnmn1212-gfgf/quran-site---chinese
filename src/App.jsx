@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 import sanaLogo from "./assets/sana-logo.png";
 import voiceMp3 from "./assets/voice.mp3";
@@ -37,10 +37,6 @@ import {
 
 const ACCENT = "#D8B36A";
 const CTA_DARK = "#143847";
-const PAGE_BG = "#06131D";
-const PANEL_DARK = "#102A38";
-const PANEL_SOFT = "#173B47";
-const PANEL_DEEP = "#0D2431";
 
 const SURFACE_GRADIENT =
   "bg-[linear-gradient(135deg,rgba(7,29,43,0.98)_0%,rgba(15,51,66,0.96)_34%,rgba(31,74,80,0.94)_72%,rgba(92,80,39,0.88)_100%)]";
@@ -69,8 +65,6 @@ const pulseGlow = {
 const containerClass =
   "relative z-10 mx-auto w-full max-w-[1680px] px-4 sm:px-6 lg:px-10 xl:px-14";
 
-const glass =
-  "border border-white/10 bg-white/[0.05] md:backdrop-blur-xl backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.18)]";
 
 const softCard = `rounded-[2rem] border border-white/10 ${SURFACE_GRADIENT} shadow-[0_12px_34px_rgba(0,0,0,0.18)]`;
 const outerFrame = `rounded-[2.2rem] border border-white/10 ${SURFACE_GRADIENT} shadow-[0_16px_40px_rgba(0,0,0,0.2)]`;
@@ -348,7 +342,7 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
         </div>
 
         <div
-          className={`mt-4 rounded-2xl border border-white/10 bg-[rgba(7,23,34,0.34)] px-4 py-4 text-white/82 ${
+          className={`mt-4 rounded-2xl border border-white/10 bg-[rgba(7,23,34,0.34)] px-4 py-4 text-white/[0.82] ${
             large
               ? "text-base leading-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-10"
               : "text-base leading-8 sm:text-lg"
@@ -642,7 +636,7 @@ function HeroAudioPlayer({ isMobile }) {
     <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[rgba(7,23,34,0.34)] p-3 sm:p-4">
       <audio ref={audioRef} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
 
-      <div className="mb-4 flex h-14 items-end gap-[2px] overflow-hidden rounded-2xl border border-white/10 bg-black/10 px-2 py-3 sm:h-18">
+      <div className="mb-4 flex h-14 items-end gap-[2px] overflow-hidden rounded-2xl border border-white/10 bg-black/10 px-2 py-3 sm:h-[4.5rem]">
         {bars.map((height, index) => (
           <motion.div
             key={index}
@@ -892,7 +886,7 @@ function ProtectedHlsVideoCard({
               className="absolute inset-0 flex items-center justify-center bg-black/15 transition hover:bg-black/10"
               aria-label="播放视频"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_0_22px_rgba(20,56,71,0.25)] sm:h-18 sm:w-18">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_0_22px_rgba(20,56,71,0.25)] sm:h-[4.5rem] sm:w-[4.5rem]">
                 <Play className="ml-1 h-7 w-7 text-white" />
               </span>
             </button>
@@ -991,21 +985,21 @@ export default function QuranTranslationLandingPage() {
   const isMobile = useIsMobile();
   const videoElementsRef = useRef({});
 
-  const registerVideo = (videoId, element) => {
+  const registerVideo = useCallback((videoId, element) => {
     videoElementsRef.current[videoId] = element;
-  };
+  }, []);
 
-  const unregisterVideo = (videoId) => {
+  const unregisterVideo = useCallback((videoId) => {
     delete videoElementsRef.current[videoId];
-  };
+  }, []);
 
-  const requestExclusivePlay = (activeVideoId) => {
+  const requestExclusivePlay = useCallback((activeVideoId) => {
     Object.entries(videoElementsRef.current).forEach(([videoId, element]) => {
       if (videoId !== String(activeVideoId) && element && !element.paused) {
         element.pause();
       }
     });
-  };
+  }, []);
 
   return (
     <LazyMotion features={domAnimation}>
