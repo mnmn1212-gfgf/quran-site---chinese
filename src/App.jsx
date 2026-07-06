@@ -1095,7 +1095,7 @@ export default function QuranTranslationLandingPage() {
                 style={{ color: ACCENT }}
               >
                 <Stars className="h-4 w-4" style={{ color: ACCENT }} />
-                <span>Sana —— 传向众世界的信息</span>
+                <span>萨纳——传达给全世界的使命</span>
               </motion.div>
 
               <motion.h1
@@ -1374,7 +1374,7 @@ export default function QuranTranslationLandingPage() {
             >
               {sectionBadge(Sparkles, "平台特色")}
               <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">
-                Sana —— 传向众世界的信息
+                萨纳——传达给全世界的使命
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/72 sm:text-lg">
                 一个运用现代技术传播古兰经意义的平台，将教法根基与先进媒介优雅结合。
@@ -1589,7 +1589,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
 
                     <div className="mt-4 text-2xl font-black sm:text-3xl" style={{ color: ACCENT }}>
-                      Sana —— 传向众世界的信息
+                      萨纳——传达给全世界的使命
                     </div>
 
                     <p className="mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-[rgba(7,23,34,0.34)] px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8">
